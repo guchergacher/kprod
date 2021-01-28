@@ -1,0 +1,28 @@
+// Шрифты
+$special-font: ("Stolzl");
+$extra-special-font: ("Gotham Pro");
+
+$basic-font: ("Arial", sans-serif);
+
+$font-stack: join($special-font, $basic-font);
+$extra-font-stack: join($extra-special-font, $basic-font);
+
+// Цвета
+$basic-white: #ffffff;
+$basic-black: #121b30;
+$basic-light-gray: #e5e5e5;
+$basic-gray: #f6f4fc;
+$basic-blue: #4c1dd2;
+$basic-pink: #f86161;
+
+$special-blue: #4f15f3;
+$special-gray: #bcbcbc;
+$special-dark-gray: #878e9c;
+
+// Вьюпорт
+$mobile-width: 768px;
+$tablet-width: 991px;
+$desktop-width: 1200px;
+
+// Ретина
+$retina-dppx: 2dppx;
