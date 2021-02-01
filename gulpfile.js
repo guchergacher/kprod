@@ -17,6 +17,8 @@ const rename = require('gulp-rename');
 const del = require('del');
 const imagemin = require('gulp-imagemin');
 
+const uglify = require('gulp-uglify-es').default;
+
 const clean = () => {
   return del('build');
 };
@@ -57,6 +59,16 @@ const css = () => {
     .pipe(sync.stream());
 };
 
+const js = () => {
+  return src('source/js/**/*.js')
+    .pipe(sourcemap.init())
+    .pipe(uglify())
+    .pipe(rename('script.min.js'))
+    .pipe(sourcemap.write('.'))
+    .pipe(dest('build/js'))
+    .pipe(sync.stream());
+};
+
 const images = () => {
   return src('source/img/**/*.{png,jpg,svg}')
     .pipe(imagemin([
@@ -77,6 +89,7 @@ const build = series(
   clean,
   copy,
   css,
+  js,
   images,
   html
 );
@@ -100,6 +113,7 @@ exports.server = server;
 
 const watcher = () => {
   watch('source/sass/**/*.{scss,sass}', series(css));
+  watch('source/js/**/*.js', series(js));
   watch('source/*.html').on('change', series(html, sync.reload));
 };
 
