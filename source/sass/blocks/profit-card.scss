@@ -1,0 +1,85 @@
+.profit-card {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 14px 15px 12px;
+
+  background-color: $basic-black;
+  border-radius: 9px;
+
+  @media (min-width: $desktop-width) {
+    border-radius: 21px;
+  }
+
+  &::before {
+    @include icon;
+  }
+
+  &--user {
+    flex-direction: column;
+
+    text-align: center;
+
+    @media (min-width: $desktop-width) {
+      min-width: 160px;
+      padding: 26px 20px;
+    }
+
+    &::before {
+      margin-bottom: 10px;
+      background-image: url("../img/icon-people.svg");
+      background-size: 16px auto;
+
+      @media (min-width: $desktop-width) {
+        margin-bottom: 13px;
+        background-size: 23px auto;
+      }
+    }
+  }
+
+  &--sale {
+    @media (min-width: $desktop-width) {
+      min-width: 288px;
+      padding: 14px 20px 17px;
+    }
+
+    &::before {
+      margin-right: 10px;
+
+      background-image: url("../img/icon-sale.svg");
+      background-size: 15px auto;
+
+      @media (min-width: $desktop-width) {
+        margin-right: 15px;
+        background-size: 20px auto;
+      }
+    }
+  }
+}
+
+.profit-card__number {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 5px;
+
+    font-size: 22px;
+    line-height: 27px;
+  }
+}
+
+.profit-card__text {
+  margin-left: 0;
+
+  font-weight: 350;
+  font-size: 10px;
+  line-height: 13px;
+
+  @media (min-width: $desktop-width) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}

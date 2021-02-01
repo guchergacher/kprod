@@ -1,0 +1,28 @@
+.contact-form {
+  @media (min-width: $tablet-width) {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  @media (min-width: $desktop-width) {
+    position: relative;
+    z-index: 10;
+  }
+}
+
+.contact-form__input {
+  @media (max-width: $tablet-width - 1px) {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  @media (min-width: $tablet-width) {
+    flex-shrink: 0;
+    width: 284px;
+    margin-right: 20px;
+  }
+}
+
+.contact-form__button {
+  width: 100%;
+}

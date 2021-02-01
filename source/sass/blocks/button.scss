@@ -1,0 +1,41 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 20px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: $font-stack;
+  text-align: center;
+  color: $basic-white;
+
+  background-color: $basic-pink;
+  border: none;
+  border-radius: 6px;
+
+  @media (min-width: $mobile-width) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  @media (min-width: $tablet-width) {
+    min-height: 56px;
+
+    font-size: 18px;
+    line-height: 22px;
+
+    border-radius: 12px;
+  }
+
+  &:hover {
+    background-color: $special-pink;
+    cursor: pointer;
+  }
+
+  &:active {
+    color: rgba($basic-white, 0.3);
+  }
+}

@@ -1,0 +1,122 @@
+.contacts {
+  @include list-unstyled;
+
+  padding: 35px 15px 30px;
+
+  @media (min-width: $mobile-width) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 0;
+  }
+}
+
+.contacts__item {
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  @media (min-width: $mobile-width) {
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+
+  @media (min-width: $mobile-width) {
+    margin-left: 15px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-left: 40px;
+  }
+}
+
+.contacts__link {
+  display: inline-flex;
+  align-items: center;
+
+  font-size: 18px;
+  color: $basic-black;
+
+  @media (min-width: $mobile-width) and (max-width: $desktop-width - 1px) {
+    width: 35px;
+    height: 35px;
+
+    font-size: 0;
+    overflow: hidden;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 11px;
+    padding-bottom: 13px;
+
+    color: $basic-white;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+
+  &::before {
+    content: "";
+
+    display: inherit;
+    flex-shrink: 0;
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+
+    background-color: $special-blue;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 17px auto;
+
+    border-radius: 100%;
+  }
+
+  &--phone {
+    @media (min-width: $desktop-width) {
+      font-weight: 300;
+    }
+
+    &::before {
+      background-image: url("../img/icon-phone.svg");
+
+      @media (min-width: $desktop-width) {
+        display: none;
+      }
+    }
+  }
+
+  &--messenger {
+    @media (min-width: $desktop-width) {
+      padding-right: 25px;
+      padding-left: 25px;
+
+      font-family: $extra-font-stack;
+      font-weight: 500;
+      font-size: 17px;
+
+      background-color: $special-blue;
+
+      border-radius: 9px;
+    }
+
+    &::before {
+      background-image: url("../img/icon-whatsapp.svg");
+
+      @media (min-width: $desktop-width) {
+        width: 23px;
+        height: 23px;
+        margin-right: 17px;
+
+        background-size: 100% auto;
+
+        border-radius: 0;
+      }
+    }
+  }
+}

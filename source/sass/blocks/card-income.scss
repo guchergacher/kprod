@@ -1,0 +1,90 @@
+.card-income {
+  padding: 10px 15px;
+
+  font-weight: 400;
+  color: $special-dark-gray;
+  font-family: $extra-font-stack;
+
+  background-color: $basic-black;
+
+  border-radius: 9px;
+
+  @media (min-width: $desktop-width) {
+    width: 326px;
+    padding: 22px 33px 25px 24px;
+
+    background-color: $basic-white;
+
+    border-radius: 21px;
+  }
+}
+
+.card-income__title {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: $basic-white;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 35px;
+
+    font-size: 18px;
+    line-height: 23px;
+    color: $basic-black;
+  }
+
+  &::before {
+    @include icon;
+
+    margin-right: 10px;
+
+    background-image: url("../img/icon-line.svg");
+    background-size: 14px auto;
+
+    @media (min-width: $desktop-width) {
+      margin-right: 18px;
+
+      background-size: 20px auto;
+    }
+  }
+}
+
+.card-income__list {
+  display: none;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+  }
+
+  &::after {
+    content: "";
+
+    display: inherit;
+    width: 100%;
+    min-height: 164px;
+    max-width: 238px;
+    margin-top: 3px;
+
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-image: url("../img/bg-diagram.svg");
+    background-size: 100% auto;
+  }
+}
+
+.card-income__item {
+  min-width: 30px;
+  margin-left: 0;
+  margin-bottom: 28px;
+  padding-right: 10px;
+
+  font-size: 9px;
+  line-height: 11px;
+}

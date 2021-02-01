@@ -5,3 +5,28 @@
 
   list-style: none;
 }
+
+@mixin icon {
+  content: "";
+
+  display: inherit;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+
+  background-color: $basic-gray;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 100%;
+
+  @media (min-width: $desktop-width) {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+@mixin bg-blur {
+  background-image: url("../img/bg-blur.svg");
+  background-repeat: no-repeat;
+  background-size: 664px auto;
+}

@@ -1,0 +1,89 @@
+.header {
+  background-color: $basic-white;
+
+  @media (min-width: $mobile-width) {
+    position: relative;
+
+    background-color: $basic-blue;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      width: 400px;
+      height: 330px;
+
+      @include bg-blur;
+      background-position: left bottom;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    background-image: $icon-line;
+    background-position: left top;
+    background-size: 458px auto;
+  }
+}
+
+.header__wrapper {
+  @media (min-width: $desktop-interim-width) {
+    position: relative;
+
+    max-width: $desktop-interim-width;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.header__container {
+  position: relative;
+  padding: 20px 0 0 0;
+
+  @media (min-width: $mobile-width) and (max-width: $desktop-interim-width - 1px) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    grid-column-gap: 45px;
+    padding: 50px 15px 0;
+  }
+
+  @media (min-width: $desktop-interim-width) {
+    position: static;
+
+    padding: 50px 15px 0;
+  }
+}
+
+.header__logo {
+  @media (max-width: $mobile-width - 1px) {
+    display: inline-flex;
+    margin-left: 15px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 10px;
+  }
+
+  @media (min-width: $desktop-interim-width) {
+    position: absolute;
+    top: 60px;
+    left: 15px;
+
+    margin-top: 0;
+  }
+
+  img {
+    display: block;
+  }
+}
+
+.header__nav {
+  padding-top: 13px;
+
+  @media (min-width: $mobile-width) {
+    padding-top: 0;
+  }
+}
